@@ -12,7 +12,7 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <a class="navbar-item" href="https://LiftImage3D.github.io/">
+        <a class="navbar-item" href="https://liftimage3d.github.io/">
         <span class="icon">
             <i class="fas fa-home"></i>
         </span>
@@ -145,7 +145,7 @@
 
         window.addEventListener("TrunkApplicationStarted", (e) => {
             // Load with an initial URL.
-            var start_url = "https://storage.googleapis.com/realtime-nerf-360/cat4d/kling-forest-elf-fire_deform3dgs_pruned.ply"
+            var start_url = "https://storage.cloud.google.com/liftimage3d/frame_00030.ply"
             const viewer = new window.wasmBindings.EmbeddedViewer("brush_canvas", `?url=${start_url}&zen=true&focal=1.0&min_radius=1.5&max_radius=4.5&radius=3.75&min_pitch=-20.0&max_pitch=20.0&min_yaw=-25.0&max_yaw=25.0`)
             // setupCarousel(viewer, document.querySelector("#splat-carousel"));
             window.viewer = viewer;
@@ -203,7 +203,7 @@
         <div class="column has-text-centered">
           <div class="row">
             <h1 class="col-md-12 text-center">
-                <b>LiftImage3D:</b> Lifting Any Single Image to 3D Gaussians with Video Generation Priors<br>
+                <b>LiftImage3D:</b><br> Lifting Any Single Image to 3D Gaussians<br> with Video Generation Priors<br>
             </h1>
         </div>
 
@@ -240,7 +240,7 @@
               <span class="author-block"><sup>2</sup>Huawei Inc.</span></br>
               <!-- <p></p> -->
           </div>
-          * <i id="div1"> equal contributions in no particular order.</i> &dagger; <i id="div1"> project leader.</i>  </br>
+          * <i id="div1"> equal contributions in no particular order.</i>&emsp;&emsp; &dagger; <i id="div1"> project lead.</i>  </br>
           <!-- <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
             <h2 class="text-center"><b><font size="6">  
                 CVPR 2025
@@ -290,15 +290,52 @@
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <div class="content has-text-justified" id="div1">
+          TL;DR: LiftImage3D extend the ability of Latent video diffusion(LVDM) to build 3D Gaussians considering the geometric distortions, quality degradation and precise camera control of LVDM.
+        </div>
+
+        <h2 class="title is-3">Single Image to 3D Scene on LLFF datasets</h2>          
+          <video poster="" id="structural" autoplay muted loop playsinline height="100%">
+            <source src="./video/video1.mp4"
+                    type="video/mp4">
+          </video>
+          <video poster="" id="structural" autoplay muted loop playsinline height="100%">
+            <source src="./video/video2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Single Image to 3D Scene on DL3DV datasets</h2>          
+          <video poster="" id="back" autoplay muted loop playsinline height="100%">
+            <source src="./video/video3.mp4"
+                    type="video/mp4">
+          </video>
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <p align="center">
-          <image width="100%" src="image/teaser.png" class="img-responsive" alt="overview">
-        </p>
-        
+
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified" id="div1">
           Single-image 3D reconstruction remains a fundamental challenge in computer vision due to inherent geometric ambiguities and limited viewpoint information. 
@@ -312,6 +349,10 @@
           Extensive experiments demonstrate that LiftImage3D achieves state-of-the-art performance on two challenging datasets, 
           i.e. LLFF and DL3DV, and generalizes well to diverse in-the-wild images, from cartoon illustrations to complex real-world scenes.
         </div>
+        <p align="center">
+          <image width="100%" src="image/teaser.png" class="img-responsive" alt="overview">
+        </p>
+
         <h2 class="title is-3">Framework</h2>
         <div class="content has-text-justified" id="div1">
           The overall pipeline of LiftImage3D. Firstly, we extend LVDM to generate diverse video clips from a single image using an
@@ -420,7 +461,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Single Image to 3D Scene and can be Drag freely</h2>          
+        <h2 class="title is-3">Single Image to 3D Scene which Can Be Dragged freely</h2>          
           <video poster="" id="white" autoplay muted loop playsinline height="100%">
             <source src="./video/video4.mp4"
                     type="video/mp4">
@@ -434,40 +475,21 @@
     </div>
   </div>
 </section>
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Single Image to 3D Scene on LLFF datasets</h2>          
-          <video poster="" id="structural" autoplay muted loop playsinline height="100%">
-            <source src="./video/video1.mp4"
-                    type="video/mp4">
-          </video>
-          <video poster="" id="structural" autoplay muted loop playsinline height="100%">
-            <source src="./video/video2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Single Image to 3D Scene on DL3DV datasets</h2>          
-          <video poster="" id="back" autoplay muted loop playsinline height="100%">
-            <source src="./video/video3.mp4"
-                    type="video/mp4">
-          </video>
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Single Image to 3D Scene of the Black Myth: WuKong</h2>          
+          <video poster="" id="white" autoplay muted loop playsinline height="100%">
+            <source src="./video/video6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
